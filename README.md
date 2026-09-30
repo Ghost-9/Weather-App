@@ -1,105 +1,70 @@
-# Cupertino Weather · Native SwiftUI Experience
+# Cupertino Weather
 
-<p align="center">
-  <strong>An elegant, native iOS & macOS weather application handcrafted with Apple's SwiftUI framework.</strong><br />
-  <em>Featuring dynamic diurnal cycles, frosted glassmorphism telemetry cards, spring animations, and native SF Symbols.</em>
-</p>
+A native iOS and macOS weather application built with Swift and SwiftUI, featuring dynamic day/night atmospheric transitions, frosted glass telemetry metrics, and SF Symbols.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Swift-5.x-FA7343?logo=swift&logoColor=white" alt="Swift" />
-  <img src="https://img.shields.io/badge/SwiftUI-iOS_15%2B_%7C_macOS_12%2B-007AFF?logo=apple&logoColor=white" alt="SwiftUI" />
-  <img src="https://img.shields.io/badge/Design-Cupertino_Human_Interface-blue" alt="HIG" />
-  <img src="https://img.shields.io/badge/Symbols-SF_Symbols_5-grey" alt="SF Symbols" />
-  <img src="https://img.shields.io/badge/Build-Xcode_15%2B-1575F9?logo=xcode&logoColor=white" alt="Xcode" />
-  <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT" />
-</p>
-
-<p align="center">
-  <a href="#interface-design">Interface Design</a> •
-  <a href="#swiftui-craftsmanship">SwiftUI Craftsmanship</a> •
-  <a href="#architecture">Architecture</a> •
-  <a href="#running-locally">Running Locally</a> •
-  <a href="#license">License</a>
-</p>
+[![Swift](https://img.shields.io/badge/Swift-5.x-FA7343?logo=swift&logoColor=white)](https://swift.org/)
+[![SwiftUI](https://img.shields.io/badge/SwiftUI-iOS_15%2B_%7C_macOS_12%2B-007AFF?logo=apple&logoColor=white)](https://developer.apple.com/xcode/swiftui/)
+[![Platform](https://img.shields.io/badge/Platform-iOS_%7C_macOS-black)](https://apple.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
-## Interface Design
+## Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/weather_day.png" width="45%" alt="Cupertino Weather Day Mode" />
+  <img src="docs/screenshots/daytime.png" width="45%" alt="Daytime view" />
   &nbsp; &nbsp;
-  <img src="docs/screenshots/weather_night.png" width="45%" alt="Cupertino Weather Night Mode" />
+  <img src="docs/screenshots/nighttime.png" width="45%" alt="Nighttime view" />
 </p>
 
-<div align="center">
-  <table>
-    <tr>
-      <th align="center" width="50%">☀️ Day Cycle (Dynamic Gradient)</th>
-      <th align="center" width="50%">🌙 Night Cycle (Deep Indigo Obsidian)</th>
-    </tr>
-    <tr>
-      <td align="left">
-        <ul>
-          <li><strong>Sky Atmosphere:</strong> Multi-stop gradient transitioning from vivid azure (<code>#1F78E0</code>) to serene cloud white</li>
-          <li><strong>Atmospheric Telemetry:</strong> Frosted ultra-thin material pill tracking Humidity (62%), Wind (9 mph), and UV Index (5)</li>
-          <li><strong>5-Day Forecast:</strong> Responsive horizontal cards with individual condition symbols and temperature readings</li>
-        </ul>
-      </td>
-      <td align="left">
-        <ul>
-          <li><strong>Sky Atmosphere:</strong> Nightfall gradient from midnight navy (<code>#0D1229</code>) into deep indigo twilight</li>
-          <li><strong>Atmospheric Telemetry:</strong> Live recalibration to Night metrics (Humidity 74%, Wind 6 mph, UV Index 0)</li>
-          <li><strong>Night Forecast:</strong> Night-specific SF Symbols including moon stars, nocturnal rain, and lunar storm warnings</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</div>
+---
+
+## Features
+
+* **Diurnal State Management:** Seamless toggle between daytime azure and nighttime obsidian palettes with spring physics animations.
+* **Atmospheric Telemetry Card:** Frosted `.ultraThinMaterial` pill presenting real-time telemetry metrics (Humidity, Wind Speed, UV Index).
+* **5-Day Outlook:** Declarative forecast list leveraging native multicolor SF Symbols with condition-specific color treatments.
+* **Modern SwiftUI Patterns:** Adheres to modern iOS conventions using `.foregroundStyle`, `.ignoresSafeArea`, and reusable view components.
+* **Multiplatform Support:** Builds and runs natively on both iOS and macOS targets without platform conditionals.
 
 ---
 
-## SwiftUI Craftsmanship
-
-* **Zero-Deprecation Modern Syntax:** Built natively using `.foregroundStyle`, `.ignoresSafeArea()`, and `.symbolRenderingMode(.multicolor)`.
-* **Tactile Spring Physics:** Smooth diurnal state toggling driven by `withAnimation(.spring(response: 0.45, dampingFraction: 0.7))`.
-* **Liquid Frosted Glass:** Surface cards rendered via `.ultraThinMaterial` with continuous corner radii and 15% opacity hairline borders.
-* **Universal Multi-Platform Binary:** Shared declarative codebase compiling cleanly for both iOS and macOS targets with zero target-specific fragmentation.
-
----
-
-## Architecture
+## Project Structure
 
 ```
 Weather-App/
-├── Shared/
-│   ├── ContentView.swift      # Main declarative layout, diurnal state & telemetry cards
-│   ├── Weather_AppApp.swift   # Universal App scene entry point
-│   └── Assets.xcassets/       # Native app icon set & semantic accent color assets
-├── Tests iOS/                 # iOS UI & performance testing suite
-├── Tests macOS/               # macOS target test suite
-└── Weather App.xcodeproj      # Xcode multiplatform workspace project
+├── Weather_AppApp.swift         # App entry point
+├── ContentView.swift            # Main view, telemetry pill, forecast row
+├── Assets.xcassets/             # Color assets and app icons
+└── docs/
+    └── screenshots/             # Application screenshots
 ```
 
 ---
 
-## Running Locally
+## Getting Started
 
 ### Prerequisites
-* macOS Ventura / Sonoma or later
-* Xcode 15.0 or later with iOS 15+ SDK
+* macOS 13+ with Xcode 15+ installed
 
 ### Build & Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Ghost-9/Weather-App.git
+   cd Weather-App
+   ```
+
+2. Open the project in Xcode:
+   ```bash
+   open Weather-App.xcodeproj
+   ```
+
+3. Select your target device or simulator (e.g., iPhone 15 / 16 / 18 Pro) and press `Cmd + R` to run.
+
+Alternatively, build from command line:
 ```bash
-# Clone repository
-git clone https://github.com/Ghost-9/Weather-App.git
-cd Weather-App
-
-# Open project in Xcode
-open "Weather App.xcodeproj"
-
-# Or build via terminal command line
-xcodebuild -scheme "Weather App (macOS)" -destination "platform=macOS" CODE_SIGNING_ALLOWED=NO build
+xcodebuild -scheme Weather-App -destination 'platform=iOS Simulator,name=iPhone 16' build
 ```
 
 ---
@@ -107,7 +72,3 @@ xcodebuild -scheme "Weather App (macOS)" -destination "platform=macOS" CODE_SIGN
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-<div align="center">
-  <sub>Crafted with SwiftUI by <a href="https://github.com/Ghost-9">Mayank Batra</a></sub>
-</div>
