@@ -26,6 +26,12 @@
 
 ## Interface Design
 
+<p align="center">
+  <img src="docs/screenshots/weather_day.png" width="45%" alt="Cupertino Weather Day Mode" />
+  &nbsp; &nbsp;
+  <img src="docs/screenshots/weather_night.png" width="45%" alt="Cupertino Weather Night Mode" />
+</p>
+
 <div align="center">
   <table>
     <tr>
